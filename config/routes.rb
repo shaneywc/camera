@@ -1,4 +1,10 @@
 Camera::Application.routes.draw do
+  get "welcome/home"
+  get "welcome/thank_you"
+  get "welcome/register"
+
+  resources :products
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -48,7 +54,7 @@ Camera::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "welcome", :action => "home"
 
   # See how all your routes lay out with "rake routes"
 
