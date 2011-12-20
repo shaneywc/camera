@@ -1,6 +1,5 @@
-== Welcome to Rails
 
-Rails is a web-application framework that includes everything needed to create
+This Project is developed on Rails, which is a web-application framework that includes everything needed to create
 database-backed web applications according to the Model-View-Control pattern.
 
 This pattern splits the view (also called the presentation) into "dumb"
