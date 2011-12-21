@@ -1,4 +1,8 @@
 Camera::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   get "users/new"
 
   get "welcome/home"
@@ -67,4 +71,5 @@ Camera::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
+  match '/your_cart' => "carts#your_cart", :as => "your_cart"
 end

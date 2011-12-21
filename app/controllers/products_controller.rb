@@ -75,12 +75,12 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.xml
   def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
-
+    @cart = Cart.find(params[:id])
+    @cart.destroy
+    session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to(products_url) }
-      format.xml  { head :ok }
+      format.html { redirect_to(products_url, :notice => 'Your cart is currently empty') }
+      format.xml { head :ok }
     end
   end
 end
