@@ -1,0 +1,200 @@
+* {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-bottom: 0px;
+}
+
+body {
+	background-image: url(../images/background.jpg);
+	background-repeat: repeat;
+}
+
+#container {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#header {
+	background-image: url(../images/Cameralogo.png);
+	height: 100px;
+	margin-bottom: 20px;
+	border: medium solid #7893AE;
+	margin-top: 20px;
+}
+#cart {
+	float: right;
+	width: 224px;
+	height: 56px;
+	background-position: top;
+	background-image: url(../images/navbarbg.png);
+	border: thick groove #7893AE;
+	padding: 10px;
+	overflow: auto;
+}
+
+#nav {
+	float: left;
+	height: 40px;
+	width: 320px;
+	background-color: #FFF;
+	margin-top: 10px;
+	margin-left: 22px;
+	border: thick double #7893AE;
+	margin-bottom: 10px;
+	text-align: center;
+	padding-top: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-image: url(../images/navbg.png);
+}
+#userlogin {
+	float: left;
+	height: 56px;
+	width: 218px;
+	border: thick groove #7893AE;
+	background-image: url(../images/navbarbg.png);
+	padding: 10px;
+}
+#search_keyword {
+	height: 20px;
+	width: 300px;
+	float: left;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-image: url(../images/navbarbg.png);
+	border: thick groove #7893AE;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-left: 30px;
+}
+#search_attribute {
+	height: 20px;
+	width: 480px;
+	float: right;
+	border: thick groove #7893AE;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-image: url(../images/navbarbg.png);
+	padding: 15px;
+}
+#content {
+	clear: both;
+	height: auto;
+	background-color: #FFF;
+	border: thick groove #7893AE;
+	padding: 20px;
+}
+.border {
+	background-image: url(../images/border.png);
+	background-repeat: repeat-x;
+	height: 22px;
+}
+
+#footer {
+	background-image: url(../images/navbarbg.png);
+	height: 80px;
+	margin-top: 20px;
+	border: medium solid #7893AE;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+
+/* Round corners */
+.round {
+  border-radius:         50px;
+}
+
+/*div shadows*/
+.shadows {
+box-shadow: 5px 5px 6px #000;
+}
+
+/* dropdown menus*/
+.dropdown {
+	width: 90px;
+}
+
+/*form table*/
+
+ .tbl_bg {
+     width: 500px;
+	background-color:#D7D7D7;
+	border:1px solid #898989;
+	margin-right: auto;
+	margin-left: auto;
+    box-shadow: 5px 5px 6px #000;
+ }
+ .alt {
+ 	background-color:#EBEBEB;
+ 	}
+ .altalt {
+ 	background-color:#EBEBEB;
+ 	border-bottom:1px solid #898989;
+ 	}
+
+ .tbl_bg p {
+ 	font-size:1.4em;
+ 	text-align:left;
+ 	margin:0;
+ 	padding:5px;
+ 	font-family:Arial, Helvetica, sans-serif;
+ 	}
+ .lft_bdr {
+ 		border-left:1px solid #898989;
+ 		}
+ .input {
+ 	width:300px;
+ 	border:1px solid #ACACAC;
+ 	margin:0;
+ 	padding:2px;
+ 	}
+ 	textarea {
+ 		width:300px;
+ 		height:100px;
+ 		border:1px solid #ACACAC;
+ 		}
+
+/*links*/
+.nav a:link {
+	color: #000;
+	text-decoration: none;
+	font-weight: bold;
+}
+.nav a:visited {
+	text-decoration: none;
+	color: #000;
+}
+.nav a:hover {
+	text-decoration: none;
+	color: #7893AE;
+}
+#cart_items {
+	padding-right: 10px;
+	padding-left: 40px;
+	font-style: italic;
+}
+#validate {
+	float: right;
+}
+
+
+.nav a:active {
+	text-decoration: none;
+}
+
+/* Register button */
+a.register_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 190px;
+  color: #fff;
+  background: #006400;
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}

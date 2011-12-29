@@ -6,6 +6,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.search(params[:search_query])
+    @title = "Products"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +18,7 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     @product = Product.find(params[:id])
+    @title = "Products"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,6 +30,7 @@ class ProductsController < ApplicationController
   # GET /products/new.xml
   def new
     @product = Product.new
+    @title = "Add Products"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,6 +41,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @title = "Edit Product"
   end
 
   # POST /products
@@ -60,6 +64,7 @@ class ProductsController < ApplicationController
   # PUT /products/1.xml
   def update
     @product = Product.find(params[:id])
+    @title = "Product Update"
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
@@ -75,12 +80,12 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.xml
   def destroy
-    @cart = Cart.find(params[:id])
-    @cart.destroy
-    session[:cart_id] = nil
+    @product = Product.find(params[:id])
+    @product.destroy
+
     respond_to do |format|
-      format.html { redirect_to(products_url, :notice => 'Your cart is currently empty') }
-      format.xml { head :ok }
+      format.html { redirect_to(products_url) }
+      format.xml  { head :ok }
     end
   end
 end

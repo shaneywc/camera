@@ -1,30 +1,80 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Camera</title>
+<title><%= title %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
+  <%= render 'layouts/stylesheets' %>
 </head>
+
 <body>
+<div id="container">
+  <div id="header" class="shadows">
+  <%#= image_tag("Cameralogo.png", :alt => "Camera Store", :class => "") %>
+  </div>
+  <div id="userlogin" class="shadows">
+    <% if logged_in? %>
+          <%= current_user.username %> |
+          <%= link_to 'Logout', logout_path %> |
+          <%= link_to "Create User", new_user_path %> |
+      <% else %>
+          <%= link_to "Login", login_path %> |
+      <% end %>
+  </div>
 
-| <%= link_to "Product Catalogue", products_path %> |
-<%= link_to "Leave Site", :controller => "welcome", :action => "thank_you" %> |
-<%= link_to "Register", :controller => "welcome", :action => "register" %> |
-<%= link_to "Home", :controller => "welcome", :action => "home" %> |
-<%= link_to "Your Cart", :controller => "carts", :action => "your_cart"  %> |
-
-<div id='header'>
-<% if logged_in? %>
-<%= current_user.username %> |
-<%= link_to 'Logout', logout_path %> |
-<%= link_to "Create User", new_user_path %> |
-<% else %>
-<%= link_to "Login", login_path %> |
-<% end %>
+  <div id="nav" class="round shadows nav">
+    | <%= link_to "Product Catalogue", products_path %> |
+      <%= link_to "Leave Site", :controller => "welcome", :action => "thank_you" %> |
+      <%= link_to "Register", :controller => "welcome", :action => "register" %> |
+      <%= link_to "Home", :controller => "welcome", :action => "home" %> |
+      <%= link_to "Contact", :controller => "welcome", :action => "contact" %> |
+      <%= link_to "Your Cart", :controller => "carts", :action => "your_cart" %> |
+  </div>
+  <div id="cart" class="shadows">
+  <h3>Your Cart:</h3>
+    <div id="cart_items"></div>
+  </div>
+  <div id="search_keyword" class="shadows">
+    <% form_tag products_path, :method => 'get' do %>
+          <p>
+            <%= text_field_tag :search_query, params[:search_query] %>
+            <%= submit_tag "Search", :name => nil %>
+          </p>
+      <% end %>
+  </div>
+  <div id="search_attribute" class="shadows">
+    <form id="form2" method="post" action="">
+      <p>
+        <label>Browse by |&nbsp;Product:
+          <select name="Product" id="Product" class="dropdown">
+            <option value="Any" selected="selected">Any</option>
+            <option value="Cameras">Cameras</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+        </label>
+        <label>|&nbsp;Make:
+          <select name="Make" id="Make" class="dropdown">
+            <option value="Any" selected="selected">Any</option>
+            <option value="Casio">Casio</option>
+            <option value="Nikon">Nikon</option>
+          </select>&nbsp;|
+        </label>
+        <label>
+          <input type="submit" name="Browse" id="Browse" value="Browse" />
+        </label>
+      </p>
+    </form>
+  </div>
+  <div id="content" class="shadows">
+    <%= yield %>
+  </div>
+  <div id="footer" class="shadows nav">
+        <%= render 'layouts/footer' %>
+  </div>
 </div>
-
-<%= yield %>
-
+</div>
 </body>
 </html>
+
+

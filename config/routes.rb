@@ -8,6 +8,7 @@ Camera::Application.routes.draw do
   get "welcome/home"
   get "welcome/thank_you"
   get "welcome/register"
+  get "welcome/contact"
 
   resources :products
 

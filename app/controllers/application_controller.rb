@@ -21,6 +21,17 @@ class ApplicationController < ActionController::Base
     current_user.is_a? User
   end
 
+# Check if logged in user is admin
+  helper_method :is_admin?
+
+  def is_admin?
+    if (current_user.admin == true)
+      return true
+    else
+      access_denied
+    end
+  end
+
 # Make logged_in? available in templates as a helper
   helper_method :logged_in?
 
