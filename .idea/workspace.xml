@@ -2,55 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f8b04fe-054a-4262-af7b-413694d2d168" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/carts_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/line_items_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/carts_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/line_items_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/cart.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/line_item.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/carts/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/carts/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/carts/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/carts/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/carts/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_stylesheets.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/line_items/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/line_items/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/line_items/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/line_items/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/line_items/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/users/index.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/welcome/contact.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111221213402_create_carts.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111221213700_create_line_items.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20111221215636_add_quantity_to_line_item.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/stylesheets/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/carts.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/line_items.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/carts_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/line_items_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/cart_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/carts_helper_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/line_items_helper_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/line_item_test.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/camera.iml" afterPath="$PROJECT_DIR$/.idea/camera.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/products_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/products_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/welcome_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/welcome_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/products/index.html.erb" afterPath="$PROJECT_DIR$/app/views/products/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/welcome/home.html.erb" afterPath="$PROJECT_DIR$/app/views/welcome/home.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/welcome/register.erb" afterPath="$PROJECT_DIR$/app/views/welcome/register.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/welcome/thank_you.erb" afterPath="$PROJECT_DIR$/app/views/welcome/thank_you.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/application.js" afterPath="$PROJECT_DIR$/public/javascripts/application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/custom.css" afterPath="$PROJECT_DIR$/public/stylesheets/custom.css" />
     </list>
     <ignored path="camera.iws" />
     <ignored path=".idea/workspace.xml" />
