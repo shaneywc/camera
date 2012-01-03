@@ -2,8 +2,19 @@
 
   <%= @user.username %>
 </h1>
+<p>
+  <%= @user.fullname %>
+</p>
+<p>
+  <%= @user.email %>
+</p>
+<p>
+  <%= @user.phone %>
+</p>
+<p>
+  <%= @user.address %>
+</p>
 
-<%= @user.hashed_password %>
 <p>
   <%= link_to "Edit my details", edit_user_path(current_user) %>
 </p>

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_one :cart
   has_many :products
   attr_accessor :password
-  attr_accessible :username, :password, :password_confirmation
+  attr_accessible :username, :password, :password_confirmation, :fullname, :email, :phone, :address
   before_save :encrypt_password
 
   def self.authenticate(username, password)
@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
     self.hashed_password == encrypt(password + "ruby_rocks" + self.salt)
   end
 
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+
   validates :username,
             :uniqueness => {:case_sensitive => false},
             :presence => true,
@@ -24,6 +26,18 @@ class User < ActiveRecord::Base
             :presence => true,
             :confirmation => true,
             :length => {:within => 4..20},
+            :presence => true
+  validates :fullname,
+            :length => {:within => 4..20},
+            :presence => true
+  validates :phone,
+            :length => {:within => 10..10},
+            :presence => true
+  validates :email,
+            :presence => true,
+            :format   => { :with => email_regex }
+  validates :address,
+            :length => {:within => 4..70},
             :presence => true
 
 

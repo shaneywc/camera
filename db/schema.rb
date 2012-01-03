@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111229142945) do
+ActiveRecord::Schema.define(:version => 20120103224243) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20111229142945) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "category"
+    t.float    "delivery_cost"
   end
 
   create_table "sessions", :force => true do |t|
@@ -54,6 +56,10 @@ ActiveRecord::Schema.define(:version => 20111229142945) do
     t.datetime "updated_at"
     t.string   "salt"
     t.boolean  "admin",           :default => false
+    t.string   "fullname"
+    t.string   "email"
+    t.integer  "phone"
+    t.text     "address"
   end
 
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
