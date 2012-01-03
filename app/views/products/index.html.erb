@@ -4,12 +4,15 @@
 
 <table>
   <tr>
+    <th>Image</th>
     <th>Name</th>
     <th>Make</th>
     <th>Description</th>
     <th>Price</th>
-    <th>Image</th>
+    <th>Product Page</th>
+    <% if current_user.try(:admin?) %>
     <th>UserID</th>
+        <%end%>
     <th></th>
     <th></th>
     <th></th>
@@ -17,19 +20,21 @@
 
 <% @products.each do |product| %>
   <tr>
+    <td><%= product.image %></td>
     <td><%= product.name %></td>
     <td><%= product.make %></td>
     <td><%= product.description %></td>
     <td><%= product.price %></td>
-    <td><%= product.image %></td>
-    <td><%= product.user_id %></td>
     <td><%= link_to 'Show', product %></td>
     <% if current_user.try(:admin?) %>
+        <td><%= product.user_id %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
         <% end %>
+    <% if signed_in? %>
         <td><%= button_to 'Add to Cart', line_items_path(:product_id => product) %></td>
-  </tr>
+    <%end%>
+        </tr>
 <% end %>
 </table>
 

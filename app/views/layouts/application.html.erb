@@ -45,8 +45,12 @@
   Total Price: <%= number_to_currency( @cart.total_price, :unit => '&euro;') %>
   <br/>
   <%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
-</ul>
-      <% end %>
+  <%= button_to 'View cart', your_cart_path %>
+      </ul>
+      <% else %>
+    Login to view your Cart
+<%end%>
+
     <div id="cart_items"></div>
   </div>
   <div id="search_keyword" class="shadows">
