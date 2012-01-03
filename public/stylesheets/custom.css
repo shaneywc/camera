@@ -86,6 +86,10 @@ body {
 	border: thick groove #7893AE;
 	padding: 20px;
 }
+
+#content h3 {
+    text-align: center;
+}
 .border {
 	background-image: url(../images/border.png);
 	background-repeat: repeat-x;

@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  before_filter :authenticate, :only => [:create, :destroy]
   # GET /carts
   # GET /carts.xml
   def index
@@ -13,11 +14,13 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.xml
   def show
+    if current_user.try(:admin?)
     @cart = Cart.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @cart }
+    end
     end
   end
 

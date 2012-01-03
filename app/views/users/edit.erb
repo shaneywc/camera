@@ -1,7 +1,7 @@
-<h1>Register</h1>
+<h1>Edit user</h1>
 
 <%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
+     <% if @user.errors.any? %>
 <div id="errorExplanation">
 <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 <ul>
@@ -24,8 +24,6 @@
     <%= f.password_field :password_confirmation %>
   </div>
   <div class="actions">
-    <%= f.submit "Register" %>
+    <%= f.submit "Update" %>
   </div>
 <% end %>
-
-<%= link_to 'Back', products_path %>

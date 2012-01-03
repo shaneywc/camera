@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <h2>Your Cart</h2>
+<% if signed_in? %>
+  <% @cart = current_cart %>
 <ul>
   <% for item in @cart.line_items %>
       <li><%= item.product.name %>&times;<%= item.quantity %>  </li>
@@ -9,8 +11,11 @@
   <br/>
   <%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
 </ul>
+   <%= link_to 'Edit', edit_cart_path(@cart) %> |
+   <%= link_to 'Back', carts_path %>
+<% else %>
+    You Must Be Logged in to view your Cart
+<%end%>
 
 
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>

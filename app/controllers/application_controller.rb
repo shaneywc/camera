@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include SessionsHelper
 
   protected
 # Returns the currently logged in user or nil if there isn't one
@@ -36,8 +37,9 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
 
   def access_denied
-    redirect_to login_path, :notice => "Please log in to continue" and return false
+    redirect_to login_path, :notice => "Please log in or confirm credentials to continue" and return false
   end
+
 
   private
   def current_cart

@@ -13,26 +13,40 @@
   <div id="header" class="shadows">
   <%#= image_tag("Cameralogo.png", :alt => "Camera Store", :class => "") %>
   </div>
-  <div id="userlogin" class="shadows">
+  <div id="userlogin" class="shadows"><h3>
     <% if logged_in? %>
           <%= current_user.username %> |
+          <%= link_to "My profile", current_user %> |
           <%= link_to 'Logout', logout_path %> |
-          <%= link_to "Create User", new_user_path %> |
+        <% if current_user.admin %>
+        <%= link_to "Create User", new_user_path %> |
+        <%end%>
       <% else %>
           <%= link_to "Login", login_path %> |
-      <% end %>
+      <% end %> </h3>
   </div>
 
   <div id="nav" class="round shadows nav">
-    | <%= link_to "Product Catalogue", products_path %> |
-      <%= link_to "Leave Site", :controller => "welcome", :action => "thank_you" %> |
-      <%= link_to "Register", :controller => "welcome", :action => "register" %> |
-      <%= link_to "Home", :controller => "welcome", :action => "home" %> |
+    | <%= link_to "Home", :controller => "welcome", :action => "home" %> |
+      <%= link_to "Product Catalogue", products_path %> |
+      <%= link_to "Register", :controller => "users", :action => "new" %> |
       <%= link_to "Contact", :controller => "welcome", :action => "contact" %> |
+      <%= link_to "Leave Site", :controller => "welcome", :action => "thank_you" %> |
       <%= link_to "Your Cart", :controller => "carts", :action => "your_cart" %> |
   </div>
   <div id="cart" class="shadows">
   <h3>Your Cart:</h3>
+<ul>
+  <% if signed_in? %>
+  <% @cart = current_cart %>
+  <% for item in @cart.line_items %>
+      <li><%= item.product.name %>&times;<%= item.quantity %>  </li>
+  <% end %>
+  Total Price: <%= number_to_currency( @cart.total_price, :unit => '&euro;') %>
+  <br/>
+  <%= button_to 'Empty cart', @cart, :method => :delete, :confirm => 'Are you sure?' %>
+</ul>
+      <% end %>
     <div id="cart_items"></div>
   </div>
   <div id="search_keyword" class="shadows">
@@ -67,10 +81,13 @@
     </form>
   </div>
   <div id="content" class="shadows">
+    <h3><%= notice %></h3>
     <%= yield %>
   </div>
   <div id="footer" class="shadows nav">
+    <%= link_to "Users", users_path %>
         <%= render 'layouts/footer' %>
+    <%= debug(params) if Rails.env.development? %>
   </div>
 </div>
 </div>

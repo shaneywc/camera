@@ -24,7 +24,7 @@
     <td><%= product.image %></td>
     <td><%= product.user_id %></td>
     <td><%= link_to 'Show', product %></td>
-    <% if current_user.admin %>
+    <% if current_user.try(:admin?) %>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
         <% end %>
@@ -36,6 +36,6 @@
 
 
 <br />
-<% if current_user.admin %>
+<% if current_user.try(:admin?) %>
 <%= link_to 'New Product', new_product_path %>
 <% end %>

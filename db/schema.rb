@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111222003850) do
+ActiveRecord::Schema.define(:version => 20111229142945) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at"
@@ -55,5 +55,7 @@ ActiveRecord::Schema.define(:version => 20111222003850) do
     t.string   "salt"
     t.boolean  "admin",           :default => false
   end
+
+  add_index "users", ["username"], :name => "index_users_on_username", :unique => true
 
 end

@@ -1,6 +1,6 @@
 Camera::Application.routes.draw do
   resources :line_items
-
+  resources :products
   resources :carts
 
   get "users/new"
@@ -10,7 +10,6 @@ Camera::Application.routes.draw do
   get "welcome/register"
   get "welcome/contact"
 
-  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -48,7 +47,7 @@ Camera::Application.routes.draw do
   #   resources :products do
   #     resources :comments
   resources :users
-  resources :sessions
+  resources :sessions, :only => [:new, :create, :destroy]
   #     resources :sales do
   #       get 'recent', :on => :collection
   #     end
@@ -70,6 +69,8 @@ Camera::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+
+  match '/signup', :to => 'users#new'
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/your_cart' => "carts#your_cart", :as => "your_cart"

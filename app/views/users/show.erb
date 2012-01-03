@@ -1,0 +1,10 @@
+<h1>
+
+  <%= @user.username %>
+</h1>
+
+<%= @user.hashed_password %>
+<p>
+  <%= link_to "Edit my details", edit_user_path(current_user) %>
+</p>
+
