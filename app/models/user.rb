@@ -1,10 +1,18 @@
 require 'digest'
 class User < ActiveRecord::Base
-  has_one :cart
+
   has_many :products
+  has_many :orders, :dependent => :destroy
   attr_accessor :password
   attr_accessible :username, :password, :password_confirmation, :fullname, :email, :phone, :address
   before_save :encrypt_password
+
+  def add_line_items_from_cart(cart)
+    cart.line_items.each do |item|
+      item.cart_id = nil
+      line_items << item
+    end
+  end
 
   def self.authenticate(username, password)
     user = find_by_username(username)

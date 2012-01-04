@@ -1,21 +1,52 @@
 <h1>
-
-  <%= @user.username %>
+<%= @user.username %>
 </h1>
+
+<fieldset>
+<legend>Your Details</legend>
+
 <p>
-  <%= @user.fullname %>
+ Name: <%= @user.fullname %>
 </p>
 <p>
-  <%= @user.email %>
+ Email: <%= @user.email %>
 </p>
 <p>
-  <%= @user.phone %>
+ Phone: <%= @user.phone %>
 </p>
 <p>
-  <%= @user.address %>
+ Address: <%= @user.address %>
+</p>
+<p>
+ Username: <%= @user.username %>
 </p>
 
 <p>
   <%= link_to "Edit my details", edit_user_path(current_user) %>
 </p>
+</fieldset>
+<fieldset>
+<legend>Your Orders</legend>
+<p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Pay type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
 
+  <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.fullname %></td>
+        <td><%= order.address %></td>
+        <td><%= order.email %></td>
+        <td><%= order.pay_type %></td>
+      </tr>
+  <% end %>
+</table>
+</p>
+</fieldset>

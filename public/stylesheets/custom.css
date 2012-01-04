@@ -202,3 +202,13 @@ a.register_button {
   font-weight: bold;
   padding: 20px;
 }
+/* carts */
+
+  	.item_price, .total_line {
+  	text-align: left;
+  	}
+
+  	.total_line {
+   	font-weight: bold;
+   	border-top: 1px solid #595;
+   	}

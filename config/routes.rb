@@ -1,4 +1,5 @@
 Camera::Application.routes.draw do
+  resources :orders
   resources :line_items
   resources :products
   resources :carts
@@ -10,7 +11,9 @@ Camera::Application.routes.draw do
   get "welcome/register"
   get "welcome/contact"
 
-
+  resources :products do
+  	get :who_bought, on: :member
+  	end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -74,4 +77,6 @@ Camera::Application.routes.draw do
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/your_cart' => "carts#your_cart", :as => "your_cart"
+  match '/thank_you' => "welcome#thank_you", :as => "thank_you"
+
 end

@@ -1,6 +1,11 @@
-  <p><a href="../index.html">Home</a> | <a href="../products.html">Products</a> | <a href="../contact.html">Contact us</a> | <a href="../t&amp;cs.html">T&amp;C's</a> | <a href="../privacy_policy.html">Privacy Policy</a> | <a href="../shipping.html">Shipping</a></p>
-  <p>Copyright 2011 © www.thecamerastore.com</p>
-  <p>Web Design by Shane Cunningham</p>
+  <p>| <a href="../t&amp;cs.html">T&amp;C's</a> | <a href="../privacy_policy.html">Privacy Policy</a> |
+    | <%= link_to "Home", :controller => "welcome", :action => "home" %> |
+    <%= link_to "Product Catalogue", products_path %> |
+    <%= link_to "Register", :controller => "users", :action => "new" %> |
+    <%= link_to "Contact", :controller => "welcome", :action => "contact" %> |
+    <%= link_to "Your Cart", :controller => "carts", :action => "your_cart" %> |
+  </p>
+  <p>Copyright 2011 Web Design by Shane Cunningham</p>
   <div id="validate">
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
       <img style="border:0;width:88px;height:31px"

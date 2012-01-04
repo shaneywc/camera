@@ -6,7 +6,7 @@ gem 'rails', '3.0.10'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'will_paginate', '3.0.pre2'
+gem 'will_paginate', '~> 3.0'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 
 # Use unicorn as the web server
