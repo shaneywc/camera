@@ -25,7 +25,11 @@
   <%= @product.price %>
 </p>
 
+
 <% if current_user.try(:admin?) %>
     <%= link_to 'Edit', edit_product_path(@product) %> |
 <% end %>
 <%= link_to 'Back', products_path %>
+<% if signed_in? %>
+    <%= button_to 'Add to Cart', line_items_path(:product_id => @product) %>
+<% end %>

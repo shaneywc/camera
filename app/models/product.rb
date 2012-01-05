@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   has_many :line_items
   has_many :orders, through: :line_items
 
-  attr_accessible :name, :description, :price
+  attr_accessible :name, :description, :price, :make, :image
 
   def self.search(search_query)
     if search_query

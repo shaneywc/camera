@@ -81,7 +81,7 @@ class LineItemsController < ApplicationController
    # @line_item = @cart.remove_product(product)
 
     respond_to do |format|
-      format.html { redirect_to(@line_item) }
+      format.html { redirect_to(@line_item.cart, :notice => 'The product was successfully removed from your cart.')}
       format.xml { head :ok }
     end
   end

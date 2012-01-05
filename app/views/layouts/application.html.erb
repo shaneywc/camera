@@ -21,6 +21,7 @@
         <% if current_user.admin %>
             <%= link_to "Create User", new_user_path %> |
         <% end %>
+        <%= link_to "My Orders", your_orders_path %>
     <% else %>
         <%= link_to "Login", login_path %> |
     <% end %> </h3>
@@ -39,7 +40,8 @@
       <% if signed_in? %>
           <% @cart = current_cart %>
           <% for item in @cart.line_items %>
-              <li><%= item.quantity %>&times;<%= item.product.name %>  <%= number_to_currency(item.total_price, :unit => '&euro;') %> </li>
+              <li><%= item.quantity %>&times;<%= item.product.name %>  <%= number_to_currency(item.total_price, :unit => '&euro;') %>
+              <%= button_to 'Remove', item, :method => :delete, :confirm => 'Are You Sure' %></li>
           <% end %>
           <div class="total_line"> Total Price: <%= number_to_currency(@cart.total_price, :unit => '&euro;') %> </div>
           <br/>
@@ -61,7 +63,7 @@
     <% end %>
   </div>
   <div id="search_attribute" class="shadows">
-    <form id="form2" method="post" action="">
+     <form id="form2" method="post" action="">
       <p>
         <label>Browse by |&nbsp;Product:
           <select name="Product" id="Product" class="dropdown">

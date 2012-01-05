@@ -5,7 +5,9 @@
   <% @cart = current_cart %>
 <ul>
   <% for item in @cart.line_items %>
-      <li><%= item.quantity %>&times;<%= item.product.name %>  <%= number_to_currency(item.total_price, :unit => '&euro;') %>  </li>
+      <li><%= item.quantity %>&times;<%= item.product.name %>  <%= number_to_currency(item.total_price, :unit => '&euro;') %>
+      <%= button_to 'Remove', item, :method => :delete, :confirm => 'Are You Sure' %></li>
+
   <% end %>
   <div class="total_line"> Total Price: <%= number_to_currency( @cart.total_price, :unit => '&euro;') %> </div>
   <br/>

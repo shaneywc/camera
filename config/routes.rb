@@ -78,5 +78,5 @@ Camera::Application.routes.draw do
   match '/logout' => "sessions#destroy", :as => "logout"
   match '/your_cart' => "carts#your_cart", :as => "your_cart"
   match '/thank_you' => "welcome#thank_you", :as => "thank_you"
-
+  match '/your_orders' => "orders#show", :as => "your_orders"
 end

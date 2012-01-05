@@ -9,6 +9,7 @@ def add_product(product)
     else
       current_item = LineItem.new(:product_id => product.id)
       line_items << current_item
+      current_item.price = current_item.product.price
     end
     current_item
 end
